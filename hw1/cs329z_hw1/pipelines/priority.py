@@ -3,7 +3,7 @@ import re
 
 from cs329z_hw1.types import Email, LMCallable
 
-CATEGORIES = {"urgant", "normal", "ignore"}
+CATEGORIES = {"urgent", "normal", "ignore"}
 
 SYSTEM_PROMPT = """
     You classify one email's priority from the point of view of the recipient
@@ -39,11 +39,11 @@ def classify_priority(email: Email, lm: LMCallable) -> dict:
     # Message = dict  # {"role": "system" | "user" | "assistant", "content": str}
     recipients = ",".join(email.get("to") or [])
     user_prompt = (
-        f"From: {email.get("from", "")}\n"
+        f"From: {email.get('from', '')}\n"
         f"To: {recipients}\n"
-        f"Date: {email.get("date", "")}\n"
-        f"Subject: {email.get("subject", "")}\n"
-        f"Body: {email.get("body", "")}\n"
+        f"Date: {email.get('date', '')}\n"
+        f"Subject: {email.get('subject', '')}\n"
+        f"Body: {email.get('body', '')}\n"
     )
 
     try:
