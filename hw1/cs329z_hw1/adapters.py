@@ -64,8 +64,6 @@ def run_priority(email: Email, lm: LMCallable) -> dict:
     from cs329z_hw1.pipelines.priority import classify_priority
     return classify_priority(email, lm)
 
-    raise NotImplementedError
-
 
 def run_daily_digest(emails: list[Email], lm: LMCallable) -> str:
     """Problem (daily_digest).
@@ -82,7 +80,9 @@ def run_daily_digest(emails: list[Email], lm: LMCallable) -> str:
       site that email is about; it contains no term listed for the gold
       ignore emails.
     """
-    raise NotImplementedError
+
+    from cs329z_hw1.pipelines.daily_digest import daily_digest
+    return daily_digest(emails, lm)
 
 
 def run_bm25_build(docs: list[str]) -> Any:
